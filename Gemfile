@@ -14,6 +14,10 @@ gem "puma", "~> 5.0"
 
 gem "graphql"
 
+gem 'rubocop-rails', require: false
+
+gem 'rubocop-performance'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
