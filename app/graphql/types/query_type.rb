@@ -30,5 +30,14 @@ module Types
       Rails.logger.info context[:time]
       "Hello #{name}!"
     end
+
+    field :author, Types::AuthorType, null: true do
+      description 'Returns one author instance'
+      argument :id, ID, required: true
+    end
+
+    def author(id:)
+      Author.find_by(id:)
+    end
   end
 end
