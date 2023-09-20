@@ -8,4 +8,11 @@ class Types::AuthorType < Types::BaseObject
   field :last_name, String, null: true
   field :yob, Integer, null: false
   field :is_alive, Boolean, null: true
+
+  field :full_name, String, null: true
+  def full_name
+    [first_name, last_name].compact.join(' ')
+  end
+
+  field :coordinates, Types::CoordinatesType, null: false
 end
