@@ -39,5 +39,11 @@ module Types
     def author(id:)
       Author.find_by(id:)
     end
+
+    field :authors, [Types::AuthorType], null: false
+
+    def authors
+      Author.all
+    end
   end
 end
