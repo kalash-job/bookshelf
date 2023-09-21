@@ -11,7 +11,7 @@ class Types::AuthorType < Types::BaseObject
 
   field :full_name, String, null: true
   def full_name
-    [first_name, last_name].compact.join(' ')
+    [object.first_name, object.last_name].compact.join(' ')
   end
 
   field :coordinates, Types::CoordinatesType, null: false
